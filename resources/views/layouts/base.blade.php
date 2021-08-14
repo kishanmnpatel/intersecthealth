@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @if(env('IS_DEMO'))
-        <link rel="canonical" href="https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template">
-        <meta  name="keywords" content="themesberg, updivision, html dashboard, laravel, livewire, laravel livewire, alpine.js, html css dashboard laravel, volt pro laravel admin dashboard, livewire volt dashboard, volt admin, livewire dashboard, livewire admin, web dashboard, bootstrap 5 dashboard laravel, bootstrap 5, css3 dashboard, bootstrap 5 admin laravel, volt dashboard bootstrap 5 laravel pro, frontend, responsive bootstrap 5 dashboard, volt dashboard pro, volt laravel bootstrap 5 dashboard"></meta>
-        <meta  name="description" content="Fullstack tool featuring Laravel CRUDs, hundreds of UI components and dozens of example pages."></meta>
-        <meta  itemprop="name" content="Volt PRO Laravel Admin Dashboard by Themesberg & UPDIVISION"></meta>
-        <meta  itemprop="description" content="Fullstack tool featuring Laravel CRUDs, hundreds of UI components and dozens of example pages."></meta>
-        <meta  itemprop="image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-laravel/volt-pro-laravel-dashboard.jpg"></meta>
+    <title>Intersect Healthcare System</title>
+    {{-- @if(env('IS_DEMO')) --}}
+        <link rel="canonical" href="https://www.intersecthealth.net">
+        <meta  name="keywords" content="Intersect, Healthcare, intersect healthcare system, intersect healthcare"></meta>
+        <meta  name="description" content="Intersect healthcare system is a online medicare system to provide consulting service to patients."></meta>
+        <meta  itemprop="name" content="Intersect Healthcare System"></meta>
+        <meta  itemprop="description" content="Intersect healthcare system is a online medicare system to provide consulting service to patients."></meta>
+        <meta  itemprop="image" content="https://www.intersecthealth.net/800X160Logo.jpg"></meta>
         <meta  name="twitter:card" content="product"></meta>
         <meta  name="twitter:site" content="@themesberg"></meta>
-        <meta  name="twitter:title" content="Volt PRO Laravel Admin Dashboard by Themesberg & UPDIVISION"></meta>
-        <meta  name="twitter:description" content="Fullstack tool featuring Laravel CRUDs, hundreds of UI components and dozens of example pages."></meta>
+        <meta  name="twitter:title" content="Intersect Healthcare System"></meta>
+        <meta  name="twitter:description" content="Intersect healthcare system is a online medicare system to provide consulting service to patients."></meta>
         <meta  name="twitter:creator" content="@themesberg"></meta>
-        <meta  name="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-laravel/volt-pro-laravel-dashboard.jpg"></meta>
+        <meta  name="twitter:image" content="https://www.intersecthealth.net/800X160Logo.jpg"></meta>
         <meta  property="fb:app_id" content="655968634437471"></meta>
-        <meta  property="og:title" content="Volt PRO Laravel Admin Dashboard by Themesberg & UPDIVISION"></meta>
+        <meta  property="og:title" content="Intersect Healthcare System"></meta>
         <meta  property="og:type" content="article"></meta>
-        <meta  property="og:url" content="https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template/preview"></meta>
-        <meta  property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-laravel/volt-pro-laravel-dashboard.jpg"></meta>
-        <meta  property="og:description" content="Fullstack tool featuring Laravel CRUDs, hundreds of UI components and dozens of example pages."></meta>
-    @endif
+        <meta  property="og:url" content="https://www.intersecthealth.net"></meta>
+        <meta  property="og:image" content="https://www.intersecthealth.net/800X160Logo.jpg"></meta>
+        <meta  property="og:description" content="Intersect healthcare system is a online medicare system to provide consulting service to patients."></meta>
+    {{-- @endif --}}
     
     @livewireStyles
     <!-- Datepicker -->

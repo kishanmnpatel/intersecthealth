@@ -25,8 +25,14 @@ class SignUp extends Component
     public function mount()
     {
         $this->roles = Role::take(3)->get();
-        if (auth()->user()) {
-            return redirect()->intended('/dashboard');
+        if ($user = auth()->user()) {
+            if ($user->hasRole('admin')) {
+                return redirect()->intended('/ad/dashboard');
+            } elseif ($user->hasRole('doctor')) {
+                return redirect()->intended('/dr/dashboard');
+            } elseif ($user->hasRole('patient')) {
+                return redirect()->intended('/pt/dashboard');
+            }
         }
     }
 
@@ -71,7 +77,13 @@ class SignUp extends Component
 
         auth()->login($user);
 
-        return redirect('/dashboard');
+        if ($user->hasRole('admin')) {
+            return redirect()->intended('/ad/dashboard');
+        } elseif ($user->hasRole('doctor')) {
+            return redirect()->intended('/dr/dashboard');
+        } elseif ($user->hasRole('patient')) {
+            return redirect()->intended('/pt/dashboard');
+        }
     }
 
     public function render()

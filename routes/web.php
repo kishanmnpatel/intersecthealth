@@ -115,4 +115,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/components/modals', Modals::class)->name('modals');
     Route::get('/components/typography', Typography::class)->name('typography');
     Route::get('/widgets', Widgets::class)->name('widgets');
+
+    Route::middleware(['role:admin'])->prefix('ad')->name('admin.')->group(function () {
+        Route::get('home', \App\Http\Livewire\Admin\Home::class)->name('home');
+        Route::get('dashboard', Dashboard::class)->name('dashboard');
+    });
+
+    Route::middleware(['role:doctor'])->prefix('dr')->name('doctor.')->group(function () {
+        Route::get('home', \App\Http\Livewire\Doctor\Home::class)->name('home');
+        Route::get('dashboard', Dashboard::class)->name('dashboard');
+    });
+
+    Route::middleware(['role:patient'])->prefix('pt')->name('patient.')->group(function () {
+        Route::get('home', \App\Http\Livewire\Patient\Home::class)->name('home');
+        Route::get('dashboard', Dashboard::class)->name('dashboard');
+    });
 });

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +16,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("users")->insert([
+        $user = User::create([
             'first_name' => 'Admin',
             'last_name' => 'User',
             'email' => 'admin@volt.com',
@@ -25,25 +26,28 @@ class UserSeeder extends Seeder
             'status' => 'Active',
             'avatar' => 'profile-picture-1.jpg'
         ]);
-        DB::table("users")->insert([
+        $user->assignRole('admin');
+        $user = User::create([
             'first_name' => 'Creator',
             'last_name' => 'User',
-            'email' => 'creator@volt.com',
+            'email' => 'doctor@volt.com',
             'password' => Hash::make('secret'),
             'created_at' => now(),
             'role_id' => '2',
             'status' => 'Active',
             'avatar' => 'profile-picture-2.jpg'
         ]);
-        DB::table("users")->insert([
+        $user->assignRole('doctor');
+        $user = User::create([
             'first_name' => 'Member',
             'last_name' => 'User',
-            'email' => 'member@volt.com',
+            'email' => 'patient@volt.com',
             'password' => Hash::make('secret'),
             'created_at' => now(),
             'role_id' => '3',
             'status' => 'Active',
             'avatar' => 'profile-picture-7.jpg'
         ]);
+        $user->assignRole('patient');
     }
 }

@@ -7,7 +7,7 @@
             alt="Bonnie Green">
         </div>
         <div class="d-block">
-          <h2 class="h5 mb-3">Hi, Jane</h2>
+          <h2 class="h5 mb-3">Hi, {{auth()->user()->name}}</h2>
           <a href="{{ route('sign-in') }}" class="btn btn-secondary btn-sm d-inline-flex align-items-center"><svg
               class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
@@ -34,11 +34,11 @@
             <img src="/assets/img/brand/light.svg" height="20" width="20" alt="Volt Logo">
           </span>
           <span class="mt-1 ms-1 sidebar-text">
-            Volt Pro Laravel
+            Intersect Healthcare
           </span>
         </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
           data-bs-target="#submenu-dashboard">
           <span>
@@ -80,8 +80,19 @@
             </li>
           </ul>
         </div>
-      </li>
-      <li class="nav-item">
+      </li> --}}
+      @role('admin')
+        @livewire('admin.navlink')
+      @endrole
+
+      @role('doctor')
+        @livewire('doctor.navlink')
+      @endrole
+
+      @role('patient')
+        @livewire('patient.navlink')
+      @endrole
+      <!--<li class="nav-item">
         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
           data-bs-target="#submenu-laravel" aria-expanded="true">
           <span>
@@ -146,8 +157,8 @@
 
           </ul>
         </div>
-      </li>
-      <li class="nav-item {{ Request::segment(1) == 'kanban' ? 'active' : '' }}">
+      </li> -->
+      {{-- <li class="nav-item {{ Request::segment(1) == 'kanban' ? 'active' : '' }}">
         <a href="{{ route('kanban') }}" class="nav-link d-flex align-items-center justify-content-between">
           <span>
             <span class="sidebar-icon"><svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -159,8 +170,8 @@
             <span class="sidebar-text">Kanban</span>
           </span>
         </a>
-      </li>
-      <li
+      </li> --}}
+      {{-- <li
         class="nav-item {{ Request::segment(1) == 'messages' || Request::segment(1) == 'single-message' ? 'active' : '' }}">
         <a href="{{ route('messages') }}" class="nav-link d-flex align-items-center justify-content-between">
           <span>
@@ -177,8 +188,8 @@
           </span>
           <span class="badge badge-md bg-danger badge-pill notification-count">4</span>
         </a>
-      </li>
-      <li class="nav-item {{ Request::segment(1) == 'transactions' ? 'active' : '' }}">
+      </li> --}}
+      {{-- <li class="nav-item {{ Request::segment(1) == 'transactions' ? 'active' : '' }}">
         <a href="{{ route('transactions') }}" class="nav-link">
           <span class="sidebar-icon"><svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
@@ -189,8 +200,8 @@
             </svg></span>
           <span class="sidebar-text">Transactions</span>
         </a>
-      </li>
-      <li class="nav-item {{ Request::segment(1) == 'tasks' ? 'active' : '' }}">
+      </li> --}}
+      {{-- <li class="nav-item {{ Request::segment(1) == 'tasks' ? 'active' : '' }}">
         <a href="{{ route('tasks') }}" class="nav-link">
           <span class="sidebar-icon"><svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
@@ -464,7 +475,7 @@
           </span>
           <span class="sidebar-text">Updivision</span>
         </a>
-      </li>
+      </li> --}}
     </ul>
   </div>
 </nav>

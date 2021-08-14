@@ -19,8 +19,14 @@ class SignIn extends Component
     ];
     public function mount()
     {
-        if (auth()->user()) {
-            return redirect()->intended('/dashboard');
+        if ($user=auth()->user()) {
+            if ($user->hasRole('admin')) {
+                return redirect()->intended('/ad/dashboard');
+            } elseif($user->hasRole('doctor')) {
+                return redirect()->intended('/dr/dashboard');
+            }elseif ($user->hasRole('patient')) {
+                return redirect()->intended('/pt/dashboard');
+            }
         }
         $this->fill([
             'email' => 'admin@volt.com',
@@ -39,7 +45,13 @@ class SignIn extends Component
         if (auth()->attempt(['email' => $this->email, 'password' => $this->password], $this->remember_me)) {
             $user = User::where(['email' => $this->email])->first();
             auth()->login($user, $this->remember_me);
-            return redirect()->intended('/dashboard');
+            if ($user->hasRole('admin')) {
+                return redirect()->intended('/ad/dashboard');
+            } elseif($user->hasRole('doctor')) {
+                return redirect()->intended('/dr/dashboard');
+            }elseif ($user->hasRole('patient')) {
+                return redirect()->intended('/pt/dashboard');
+            }
         } else {
             $this->failed = 'true';
             return $this->addError('email', trans('auth.failed'));

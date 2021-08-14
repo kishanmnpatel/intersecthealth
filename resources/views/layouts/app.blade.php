@@ -30,7 +30,20 @@
         {{ $slot }}
         {{-- Footer --}}
         @include('layouts.footer2')
+    
+    @else
 
+        {{-- Nav --}}
+        @include('layouts.nav')
+        {{-- SideNav --}}
+        @include('layouts.sidenav')
+        <main class="content">
+            {{-- TopBar --}}
+            @include('layouts.topbar')
+            {{ $slot }}
+            {{-- Footer --}}
+            @include('layouts.footer')
+        </main>
 
     @endif
 
